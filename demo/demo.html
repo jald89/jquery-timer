@@ -22,76 +22,45 @@
 	p {
 		margin: 0px;
 	}
-	div {
-	 	display: inline-block;
-	 	*display:inline;
-	 	zoom:1;
-		width: 300px;
-	}
 	
 	</style>
 	
     <script type="text/javascript" src="jquery.min.js"></script>
-    <script type="text/javascript" src="../jquery.timer.js"></script>
+    <script type="text/javascript" src="../jquery.timer-0.6.js"></script>
 </head> 
 <body>
 
 	<p>
 		<pre>
 
-var countOne = 0, countTwo = 0;
-
-var timerOne = $.timer(function() {
-	countOne++;
-	$('.one').html(countOne);
+var times = 0;
+var myTimer = $.timer(function() {
+	times++;
+	$('span').html(times);
 }, 1000, true);
-			
-var timerTwo = $.timer(function() {
-	countTwo++;
-	$('.two').html(countTwo);				
-}, 1500, true);
 
 		</pre>
 	</p>
 
-	<div>
-		<p>Timer one has been executed <span class='one'>0</span> times.</p>
-		
-		<input type='button' value='timerOne.pause()' onclick='timerOne.pause();' /><br/>
-		<input type='button' value='timerOne.play()' onclick='timerOne.play();' /><br/>
-		<input type='button' value='timerOne.toggle()' onclick='timerOne.toggle();' /><br/>
-		<input type='button' value='timerOne.once()' onclick='timerOne.once();' /><br/>
-		<input type='button' value='timerOne.once(1000)' onclick='timerOne.once(1000);' /><br/>
-		<input type='button' value='timerOne.reset()' onclick='timerOne.reset();' />
-	</div>
-
-	<div>
-		<p>Timer two has been executed <span class='two'>0</span> times.</p>
-		
-		<input type='button' value='timerTwo.pause()' onclick='timerTwo.pause();' /><br/>
-		<input type='button' value='timerTwo.play()' onclick='timerTwo.play();' /><br/>
-		<input type='button' value='timerTwo.toggle()' onclick='timerTwo.toggle();' /><br/>
-		<input type='button' value='timerTwo.once()' onclick='timerTwo.once();' /><br/>
-		<input type='button' value='timerTwo.once(1000)' onclick='timerTwo.once(1000);' /><br/>
-		<input type='button' value='timerTwo.reset()' onclick='timerTwo.reset();' />
-	</div>
+	<p>This timer has been executed <span>0</span> times.</p>
+	
+	<input type='button' value='myTimer.pause()' onclick='myTimer.pause();' /><br/>
+	<input type='button' value='myTimer.play()' onclick='myTimer.play();' /><br/>
+	<input type='button' value='myTimer.toggle()' onclick='myTimer.toggle();' /><br/>
+	<input type='button' value='myTimer.once()' onclick='myTimer.once();' /><br/>
+	<input type='button' value='myTimer.once(1000)' onclick='myTimer.once(1000);' /><br/>
+	<input type='button' value='myTimer.reset()' onclick='myTimer.reset();' />
 	
 	<script type="text/javascript">
 	
-		var timerOne, timerTwo;	
+		var myTimer;	
 		$(document).ready(function() {
 
-			var countOne = 0, countTwo = 0;
-			
-			timerOne = $.timer(function() {
-				countOne++;
-				$('.one').html(countOne);
+			var times = 0;
+			myTimer = $.timer(function() {
+				times++;
+				$('span').html(times);
 			}, 1000, true);
-			
-			timerTwo = $.timer(function() {
-				countTwo++;
-				$('.two').html(countTwo);				
-			}, 1500, true);
 			
 		});
 	
