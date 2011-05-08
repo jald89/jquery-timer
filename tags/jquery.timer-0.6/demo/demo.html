@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/tr/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
+<head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<title>jQuery Timer Demo</title>
+	
+	<style type='text/css'>
+	body {
+		font-family: Arial;
+		font-size: 12px;
+	}
+	label {
+	 	display: inline-block;
+	 	*display:inline;
+	 	zoom:1;
+		width: 30px;
+	}
+	input[type=button] {
+		padding: 3px 10px;
+		margin: 10px 0px 5px;
+	}
+	p {
+		margin: 0px;
+	}
+	
+	</style>
+	
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="../jquery.timer-0.6.js"></script>
+</head> 
+<body>
+
+	<p>
+		<pre>
+
+var times = 0;
+var myTimer = $.timer(function() {
+	times++;
+	$('span').html(times);
+}, 1000, true);
+
+		</pre>
+	</p>
+
+	<p>This timer has been executed <span>0</span> times.</p>
+	
+	<input type='button' value='myTimer.pause()' onclick='myTimer.pause();' /><br/>
+	<input type='button' value='myTimer.play()' onclick='myTimer.play();' /><br/>
+	<input type='button' value='myTimer.toggle()' onclick='myTimer.toggle();' /><br/>
+	<input type='button' value='myTimer.once()' onclick='myTimer.once();' /><br/>
+	<input type='button' value='myTimer.once(1000)' onclick='myTimer.once(1000);' /><br/>
+	<input type='button' value='myTimer.reset()' onclick='myTimer.reset();' />
+	
+	<script type="text/javascript">
+	
+		var myTimer;	
+		$(document).ready(function() {
+
+			var times = 0;
+			myTimer = $.timer(function() {
+				times++;
+				$('span').html(times);
+			}, 1000, true);
+			
+		});
+	
+	</script>
+	
+</body>
+</html>
